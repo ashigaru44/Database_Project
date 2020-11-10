@@ -2,21 +2,8 @@ import connect_to_db
 from generate_data import GenerateData
 
 pol = connect_to_db.sql_connection()
-
-fields = ["id", "imie", "nazw"]
-values = ["12", "michal", "duk"]
-
 gd = GenerateData()
-# test_emp = gd.generate_employee()
-# # test_data = gd.generate_procedure()
-# test_trip = gd.generate_trip()
-
-pol.connect_db("postgres", "admin", "final_db_hope")
-
-
-# print(test_trip[0])
-# print(test_trip[1])
-# pol.insert_data_row('employee', test_emp[0], test_emp[1])
+pol.connect_db("postgres", "admin", "test_bd_5")
 
 
 def generate_records(func, reps=1):
@@ -38,10 +25,8 @@ pol.insert_data_row('equipment_type', ["type"], ["miecz"])
 
 for i in range(1000):
     res = gd.generate_donor()
-    try:
-        pol.insert_data_row(res[0], res[1], res[2])
-    except Exception:
-        continue
+    pol.insert_data_row(res[0], res[1], res[2])
+
 for i in range(1000):
     res = gd.generate_outpost()
     try:
@@ -85,7 +70,7 @@ for i in range(1000):
     except Exception:
         continue
 for i in range(1000):
-    res = gd.generate_procedure()
+    res = gd.generate_proceduere()
     try:
         pol.insert_data_row(res[0], res[1], res[2])
     except Exception:

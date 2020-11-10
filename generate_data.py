@@ -125,7 +125,7 @@ class GenerateData:
         emp_id = '6'
         donor_id = '1'
         date = datetime(random.randint(1980, 2020), random.randint(1, 12), random.randint(1, 31), random.randint(0, 24),
-                        random.randint(0, 30), random.randint(0, 30))
+                        random.randint(0, 10), random.randint(0, 10))
         date = date.strftime("%x")
         return "prodecure", ['emp_id', 'donor_id', 'date'], [emp_id, donor_id, date]
 
