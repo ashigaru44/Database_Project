@@ -35,7 +35,7 @@ class sql_connection:
             line_to_write += "'" + values[len(values) - 1] + "'"
             line_to_write += ")"
 
-        print(line_to_write)
+        # print(line_to_write)
         cursor.execute(line_to_write)
 
         self.connection.commit()
