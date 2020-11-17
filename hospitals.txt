@@ -10,7 +10,6 @@ Hospitals of the University of Pennsylvania-Penn Presbyterian
 NYU Langone Medical Center
 Barnes-Jewish Hospital/Washington University
 UPMC Presbyterian Shadyside
-Brigham and Women's Hospital
 Stanford Health Care-Stanford Hospital
 Mount Sinai Hospital
 Duke University Hospital

@@ -1,7 +1,7 @@
 import psycopg2
 
 
-class sql_connection:
+class SqlConnection:
     connection = None
 
     def connect_db(self, user, password, database):
@@ -14,6 +14,17 @@ class sql_connection:
                                                database=database)
         except (Exception, psycopg2.Error) as error:
             print("Error while connecting to PostgreSQL", error)
+
+    def check_foreign_key(self, table_name, column):
+        cursor = self.connection.cursor()
+
+        line_to_write = "select " + column + " from " + table_name
+
+        cursor.execute(line_to_write)
+        records = cursor.fetchall()
+        cursor.close()
+        records = map(lambda x: x[0], records)
+        return records
 
     def insert_data_row(self, table_name, field_names, values):
         cursor = self.connection.cursor()
